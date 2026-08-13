@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 0,
+    "left": 135,
+    "width": 870,
+    "height": 1161,
+    "isRotated": true,
+    "originalWidth": 1141,
+    "originalHeight": 1161
+  },
+  "imagePath": "image-targets/plover2 (1)_luminance.png",
+  "metadata": null,
+  "name": "plover2 (1)",
+  "resources": {
+    "originalImage": "plover2 (1)_original.png",
+    "croppedImage": "plover2 (1)_cropped.png",
+    "thumbnailImage": "plover2 (1)_thumbnail.png",
+    "luminanceImage": "plover2 (1)_luminance.png"
+  },
+  "created": 1786595749029,
+  "updated": 1786595749029
+}

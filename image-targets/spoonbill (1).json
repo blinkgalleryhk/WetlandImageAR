@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 0,
+    "left": 133,
+    "width": 873,
+    "height": 1164,
+    "isRotated": true,
+    "originalWidth": 1140,
+    "originalHeight": 1164
+  },
+  "imagePath": "image-targets/spoonbill (1)_luminance.png",
+  "metadata": null,
+  "name": "spoonbill (1)",
+  "resources": {
+    "originalImage": "spoonbill (1)_original.png",
+    "croppedImage": "spoonbill (1)_cropped.png",
+    "thumbnailImage": "spoonbill (1)_thumbnail.png",
+    "luminanceImage": "spoonbill (1)_luminance.png"
+  },
+  "created": 1786595767524,
+  "updated": 1786595767524
+}

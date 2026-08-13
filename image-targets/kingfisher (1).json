@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 0,
+    "left": 135,
+    "width": 865,
+    "height": 1154,
+    "isRotated": true,
+    "originalWidth": 1136,
+    "originalHeight": 1154
+  },
+  "imagePath": "image-targets/kingfisher (1)_luminance.png",
+  "metadata": null,
+  "name": "kingfisher (1)",
+  "resources": {
+    "originalImage": "kingfisher (1)_original.png",
+    "croppedImage": "kingfisher (1)_cropped.png",
+    "thumbnailImage": "kingfisher (1)_thumbnail.png",
+    "luminanceImage": "kingfisher (1)_luminance.png"
+  },
+  "created": 1786595741878,
+  "updated": 1786595741878
+}

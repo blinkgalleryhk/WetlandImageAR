@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 0,
+    "left": 104,
+    "width": 894,
+    "height": 1193,
+    "isRotated": true,
+    "originalWidth": 1104,
+    "originalHeight": 1193
+  },
+  "imagePath": "image-targets/bunting (1)_luminance.png",
+  "metadata": null,
+  "name": "bunting (1)",
+  "resources": {
+    "originalImage": "bunting (1)_original.png",
+    "croppedImage": "bunting (1)_cropped.png",
+    "thumbnailImage": "bunting (1)_thumbnail.png",
+    "luminanceImage": "bunting (1)_luminance.png"
+  },
+  "created": 1786595728077,
+  "updated": 1786595728077
+}

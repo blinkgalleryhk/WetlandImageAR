@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 0,
+    "left": 145,
+    "width": 882,
+    "height": 1177,
+    "isRotated": true,
+    "originalWidth": 1173,
+    "originalHeight": 1177
+  },
+  "imagePath": "image-targets/Heron, egret (1)_luminance.png",
+  "metadata": null,
+  "name": "Heron, egret (1)",
+  "resources": {
+    "originalImage": "Heron, egret (1)_original.png",
+    "croppedImage": "Heron, egret (1)_cropped.png",
+    "thumbnailImage": "Heron, egret (1)_thumbnail.png",
+    "luminanceImage": "Heron, egret (1)_luminance.png"
+  },
+  "created": 1786595735317,
+  "updated": 1786595735317
+}

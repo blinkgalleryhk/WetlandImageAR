@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 0,
+    "left": 143,
+    "width": 886,
+    "height": 1182,
+    "isRotated": true,
+    "originalWidth": 1173,
+    "originalHeight": 1182
+  },
+  "imagePath": "image-targets/blackspoonbill (1)_luminance.png",
+  "metadata": null,
+  "name": "blackspoonbill (1)",
+  "resources": {
+    "originalImage": "blackspoonbill (1)_original.png",
+    "croppedImage": "blackspoonbill (1)_cropped.png",
+    "thumbnailImage": "blackspoonbill (1)_thumbnail.png",
+    "luminanceImage": "blackspoonbill (1)_luminance.png"
+  },
+  "created": 1786595721957,
+  "updated": 1786595721957
+}

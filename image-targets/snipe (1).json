@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 0,
+    "left": 139,
+    "width": 891,
+    "height": 1189,
+    "isRotated": false,
+    "originalWidth": 1171,
+    "originalHeight": 1189
+  },
+  "imagePath": "image-targets/snipe (1)_luminance.png",
+  "metadata": null,
+  "name": "snipe (1)",
+  "resources": {
+    "originalImage": "snipe (1)_original.png",
+    "croppedImage": "snipe (1)_cropped.png",
+    "thumbnailImage": "snipe (1)_thumbnail.png",
+    "luminanceImage": "snipe (1)_luminance.png"
+  },
+  "created": 1786595757496,
+  "updated": 1786595757496
+}

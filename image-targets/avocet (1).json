@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 0,
+    "left": 99,
+    "width": 897,
+    "height": 1196,
+    "isRotated": true,
+    "originalWidth": 1096,
+    "originalHeight": 1196
+  },
+  "imagePath": "image-targets/avocet (1)_luminance.png",
+  "metadata": null,
+  "name": "avocet (1)",
+  "resources": {
+    "originalImage": "avocet (1)_original.png",
+    "croppedImage": "avocet (1)_cropped.png",
+    "thumbnailImage": "avocet (1)_thumbnail.png",
+    "luminanceImage": "avocet (1)_luminance.png"
+  },
+  "created": 1786595716325,
+  "updated": 1786595716325
+}
