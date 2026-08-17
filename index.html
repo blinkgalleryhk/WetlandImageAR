@@ -81,6 +81,74 @@
   }
   #inpage-console-messages .console-collapsed {
     display: none;
+  }
+
+  #scene-carousel-wrap {
+    position: fixed;
+    left: 50%;
+    bottom: max(18px, env(safe-area-inset-bottom));
+    transform: translateX(-50%);
+    width: min(92vw, 420px);
+    z-index: 999999;
+    pointer-events: none;
+  }
+
+  #scene-carousel {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    overflow-x: auto;
+    padding: 8px 10px;
+    border-radius: 999px;
+    background: rgba(12, 18, 24, 0.68);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    pointer-events: auto;
+  }
+
+  #scene-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scene-icon {
+    flex: 0 0 auto;
+    width: 54px;
+    height: 54px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.06);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    scroll-snap-align: center;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+    touch-action: manipulation;
+    user-select: none;
+  }
+
+  .scene-icon::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border-radius: 50%;
+    border: 1.5px dashed rgba(255, 255, 255, 0.38);
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .scene-icon.active {
+    border-color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.08);
+  }
+
+  .scene-icon:active {
+    transform: scale(0.96);
   }</style><div id="inpage-console" class="collapsed" aria-live="polite"><div id="inpage-console-header"><div id="inpage-console-title">Debug Console</div><div id="inpage-console-buttons"><button id="inpage-console-toggle" type="button">Show</button> <button id="inpage-console-clear" type="button">Clear</button></div></div><div id="inpage-console-messages" aria-label="Console messages"></div></div><script>;(function () {
     const createMessage = (level, args) => {
       const message = document.createElement('div')
@@ -149,4 +217,93 @@
     }
 
     console.log('Debug console initialized')
+  }())</script><div id="scene-carousel-wrap" aria-label="Scene selector carousel"><div id="scene-carousel" aria-live="polite"></div></div><script>;(function () {
+    const sceneCarousel = document.getElementById('scene-carousel')
+    if (!sceneCarousel) return
+
+    const sceneImageMap = {
+
+      'Wetland AR': './assets/wetlandfullAR_1_1.png',
+      'Avocet': './assets/avocet_1.png',
+      'Bunting': './assets/bunting_1.png',
+      'plover': './assets/plover2_1.png',
+      'blackspoonbill': './assets/blackspoonbill_1.png',
+      'Heron': './assets/heron_egret_1.png',
+      'spoonbill': './assets/spoonbill_1.png',
+      'kingfisher': './assets/kingfisher_1.png',
+      'snipe': './assets/snipe_1.png',
+      'Migration': './assets/bird_migration_1.png',
+      'Wetlandfield': './assets/wetlandbigeyecompressed.png'
+
+    }
+
+    const getCurrentScene = () => {
+      const app = window.ecs && window.ecs.application
+      if (!app || typeof app.getScene !== 'function') return null
+      return app.getScene()
+    }
+
+    const setSceneButtonImage = (button, sceneName) => {
+      const imagePath = sceneImageMap[sceneName] || sceneImageMap[sceneName.toLowerCase()] || ''
+      if (imagePath) {
+        button.style.backgroundImage = `url("${imagePath}")`
+        button.style.backgroundColor = 'transparent'
+      } else {
+        button.style.backgroundImage = 'none'
+        button.style.backgroundColor = 'rgba(255, 255, 255, 0.06)'
+      }
+    }
+
+    const centerSelectedScene = () => {
+      const activeButton = sceneCarousel.querySelector('.scene-icon.active')
+      if (!activeButton) return
+
+      const offsetLeft = activeButton.offsetLeft
+      const offsetWidth = activeButton.offsetWidth
+      const scrollTarget = offsetLeft - (sceneCarousel.clientWidth / 2) + (offsetWidth / 2)
+      sceneCarousel.scrollTo({left: scrollTarget, behavior: 'smooth'})
+    }
+
+    const renderSceneButtons = () => {
+      const scene = getCurrentScene()
+      if (!scene || typeof scene.listSpaces !== 'function') return
+
+      const spaces = scene.listSpaces ? scene.listSpaces() : []
+      if (!spaces || spaces.length === 0) return
+
+      sceneCarousel.innerHTML = ''
+
+      spaces.forEach((space) => {
+        const button = document.createElement('button')
+        button.type = 'button'
+        button.className = 'scene-icon'
+        button.title = space.name || space.id
+        button.setAttribute('aria-label', space.name || space.id)
+
+        const sceneName = space.name || space.id
+        setSceneButtonImage(button, sceneName)
+
+        const activeSpace = scene.getActiveSpace ? scene.getActiveSpace() : null
+        const isActive = !!activeSpace && (space.id === activeSpace.id || space.name === activeSpace.name)
+        if (isActive) button.classList.add('active')
+
+        button.addEventListener('click', function () {
+          scene.loadSpace(space.id || space.name)
+          renderSceneButtons()
+          window.setTimeout(centerSelectedScene, 0)
+        })
+
+        sceneCarousel.appendChild(button)
+      })
+
+      window.setTimeout(centerSelectedScene, 0)
+    }
+
+    const refreshSceneButtons = () => {
+      renderSceneButtons()
+    }
+
+    refreshSceneButtons()
+    window.addEventListener('focus', refreshSceneButtons)
+    window.addEventListener('resize', refreshSceneButtons)
   }())</script><script src="bundle.js"></script></body></html>
