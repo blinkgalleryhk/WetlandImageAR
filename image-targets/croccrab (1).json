@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 0,
+    "left": 71,
+    "width": 843,
+    "height": 1125,
+    "isRotated": true,
+    "originalWidth": 986,
+    "originalHeight": 1125
+  },
+  "imagePath": "image-targets/croccrab (1)_luminance.png",
+  "metadata": null,
+  "name": "croccrab (1)",
+  "resources": {
+    "originalImage": "croccrab (1)_original.png",
+    "croppedImage": "croccrab (1)_cropped.png",
+    "thumbnailImage": "croccrab (1)_thumbnail.png",
+    "luminanceImage": "croccrab (1)_luminance.png"
+  },
+  "created": 1787027108543,
+  "updated": 1787027108543
+}

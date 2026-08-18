@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 0,
+    "left": 72,
+    "width": 811,
+    "height": 1082,
+    "isRotated": true,
+    "originalWidth": 957,
+    "originalHeight": 1082
+  },
+  "imagePath": "image-targets/mudskipwet (1)_luminance.png",
+  "metadata": null,
+  "name": "mudskipwet (1)",
+  "resources": {
+    "originalImage": "mudskipwet (1)_original.png",
+    "croppedImage": "mudskipwet (1)_cropped.png",
+    "thumbnailImage": "mudskipwet (1)_thumbnail.png",
+    "luminanceImage": "mudskipwet (1)_luminance.png"
+  },
+  "created": 1787027078053,
+  "updated": 1787027078053
+}

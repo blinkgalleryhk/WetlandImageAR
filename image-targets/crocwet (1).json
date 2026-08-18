@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 0,
+    "left": 105,
+    "width": 824,
+    "height": 1099,
+    "isRotated": true,
+    "originalWidth": 1036,
+    "originalHeight": 1099
+  },
+  "imagePath": "image-targets/crocwet (1)_luminance.png",
+  "metadata": null,
+  "name": "crocwet (1)",
+  "resources": {
+    "originalImage": "crocwet (1)_original.png",
+    "croppedImage": "crocwet (1)_cropped.png",
+    "thumbnailImage": "crocwet (1)_thumbnail.png",
+    "luminanceImage": "crocwet (1)_luminance.png"
+  },
+  "created": 1787026997022,
+  "updated": 1787026997022
+}
