@@ -31,7 +31,7 @@
     flex: 0 0 auto;
     width: 70px;
     height: 70px;
-    border: 2px solid rgb(255, 255, 255);
+    border: 5px solid rgb(255, 255, 255);
     border-radius: 50%;
     background-color: rgb(255, 255, 255);
     background-size: cover;
@@ -56,7 +56,7 @@
   }
 
   .scene-icon.active {
-    border-color: rgba(166, 255, 142, 0.9);
+    border-color: rgba(127, 165, 117, 1);
     transform: scale(1.08);
   }
 
@@ -70,9 +70,7 @@
       'Avocet': './assets/avocet_1.png',
       'Bunting': './assets/bunting_1.png',
       'plover': './assets/plover2_1.png',
-      'blackspoonbill': './assets/blackspoonbill_1.png',
       'Heron': './assets/Heron_egret_1.png',
-      'spoonbill': './assets/spoonbill_1.png',
       'kingfisher': './assets/kingfisher_1.png',
       'snipe': './assets/snipe_1.png',
       'butterfly': './assets/butterwet_1.png',
@@ -80,6 +78,7 @@
       'duck': './assets/duckwet_1.png',
       'mudskipper': './assets/mudskipwet_1.png',
       'crab': './assets/croccrab_1.png',
+      'blackspoonbill': './assets/blackspoonbill_1.png',
 
     }
 
@@ -119,7 +118,16 @@
 
       sceneCarousel.innerHTML = ''
 
-      spaces.forEach((space) => {
+      const sceneOrder = Object.keys(sceneImageMap).map((sceneName) => sceneName.toLowerCase())
+      const orderedSpaces = [...spaces].sort((firstSpace, secondSpace) => {
+        const firstIndex = sceneOrder.indexOf((firstSpace.name || firstSpace.id || '').toLowerCase())
+        const secondIndex = sceneOrder.indexOf((secondSpace.name || secondSpace.id || '').toLowerCase())
+        const normalizedFirstIndex = firstIndex === -1 ? sceneOrder.length : firstIndex
+        const normalizedSecondIndex = secondIndex === -1 ? sceneOrder.length : secondIndex
+        return normalizedFirstIndex - normalizedSecondIndex
+      })
+
+      orderedSpaces.forEach((space) => {
         const button = document.createElement('button')
         button.type = 'button'
         button.className = 'scene-icon'
